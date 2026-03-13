@@ -48,6 +48,17 @@ const day = parseInt(document.getElementById("day").value);
 const month = parseInt(document.getElementById("month").value);
 const year = parseInt(document.getElementById("year").value);
 
+const currentYear = new Date().getFullYear();
+
+if (
+isNaN(day) || day < 1 || day > 31 ||
+isNaN(month) || month < 1 || month > 12 ||
+isNaN(year) || year < 1900 || year > currentYear
+){
+alert("Please enter a valid date.");
+return;
+}
+
 const dayOfWeek = getDayOfWeek(day, month, year);
 const zodiac = getZodiacSign(day, month);
 const chinese = getChineseZodiac(year);
