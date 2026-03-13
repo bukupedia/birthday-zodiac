@@ -139,9 +139,15 @@ error.textContent = "";
 const dayOfWeek = getDayOfWeek(day, month, year);
 const zodiac = getZodiacSign(day, month);
 const chinese = getChineseZodiac(year);
+const age = calculateAge(day, month, year);
+
+const daysLeft = daysUntilBirthday(day, month);
 
 document.getElementById("dayResult").textContent = dayOfWeek;
 document.getElementById("zodiacResult").textContent = zodiac;
 document.getElementById("chineseResult").textContent = chinese;
+document.getElementById("ageResult").textContent = age;
+
+document.getElementById("birthdayCountdown").textContent = daysLeft;
 
 });
